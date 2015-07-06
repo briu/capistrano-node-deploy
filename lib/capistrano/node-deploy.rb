@@ -61,7 +61,7 @@ respawn limit 99 5
 kill timeout #{kill_timeout}
 
 script
-    cd #{current_path} && exec sudo -u #{node_user} NODE_ENV=#{node_env} #{app_environment} #{node_binary} #{current_path}/#{app_command} 2>> #{stderr_log_path} 1>> #{stdout_log_path}
+    cd #{current_path} && NODE_ENV=#{node_env} #{app_environment} #{node_binary} #{current_path}/#{app_command} 2>> #{stderr_log_path} 1>> #{stdout_log_path}
 end script
 EOD
   }
